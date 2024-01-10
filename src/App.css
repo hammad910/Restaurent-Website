@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  /* background-image: url("http://localhost:5173/src/Image/home3fnl.png"); */
+
+}
+
+.header{
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  position: fixed;
+}
+
+.header.scroll{
+  background-color: #000;
+}
+
+html,body{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-image: url("http://localhost:5173/src/Image/home3fnl.png");
+}
