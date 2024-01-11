@@ -2,7 +2,6 @@
 
 *{
   font-family: 'Poppins', sans-serif;
-  /* background-image: url("http://localhost:5173/src/Image/home3fnl.png"); */
 
 }
 
@@ -16,10 +15,11 @@
   background-color: #000;
 }
 
-html,body{
-  scroll-behavior: smooth;
+
+
+@keyframes slide-in {
+  to {
+      transform: translateX(0);
+  }
 }
 
-body{
-  background-image: url("http://localhost:5173/src/Image/home3fnl.png");
-}

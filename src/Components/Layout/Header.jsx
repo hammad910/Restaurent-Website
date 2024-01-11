@@ -1,6 +1,6 @@
 import { Flex, Box, Link, Image, Button, useDisclosure, Stack, Icon } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import img from '../Image/shezicircle.png'
+import img from '../../Image/shezicircle.png'
 import { Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from '@chakra-ui/react'
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";

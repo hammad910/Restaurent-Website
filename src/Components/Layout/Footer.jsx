@@ -1,15 +1,16 @@
 import { Box, Flex, Heading, Text, Image, SimpleGrid } from "@chakra-ui/react";
 // import Socials from "../Home/Socials";
-import img from '../Image/shezicircle.png'
+import img from '../../Image/shezicircle.png'
 import { FaFacebook, FaTwitter  } from "react-icons/fa";
 
 
 function Footer() {
   const footerLink = [
-    { name: "About Us" },
-    { name: "Our Client" },
+    { name: "Home" },
+    { name: "About" },
     { name: "Service" },
-    { name: "Portfolio" },
+    { name: "Menu" },
+    { name: "Contact" },
   ]
 
   return (
@@ -29,7 +30,7 @@ function Footer() {
         </Flex>
         <Flex direction={"column"} >
           <Heading as={"h3"} size={"md"} textTransform={"capitalize"} fontFamily={'Poppins'}>Contact details</Heading>
-          <Text mt={'20px'} _hover={{ cursor: 'pointer' }} w={'250px'}>+92 321 889 9605</Text>
+          <Text mt={'20px'} _hover={{ cursor: 'pointer' }} w={'250px'}>ahmed@mrshezi.com</Text>
           <Text _hover={{ cursor: 'pointer' }}>+92 312 219 7700</Text>
         </Flex>
         <Flex direction={"column"}>

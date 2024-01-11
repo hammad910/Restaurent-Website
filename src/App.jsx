@@ -1,8 +1,8 @@
 import React from 'react'
 import {ChakraProvider} from '@chakra-ui/react'
-import Home from './Home/Home'
-import Layout from './Layout/Layout'
-import About from './About/About'
+import Home from './Components/Home/Home'
+import Layout from './Components/Layout/Layout'
+import About from './Components/About/About'
 function App() {
   return (
     <ChakraProvider>
