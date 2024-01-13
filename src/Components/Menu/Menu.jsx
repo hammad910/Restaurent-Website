@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Flex, Heading, Text, SimpleGrid, } from "@chakra-ui/react"
 import MenuCard from '../Menu/MenuCard'
-import { FiUsers } from 'react-icons/fi';
-
+// import { FiUsers } from 'react-imgs/fi';
+import menuImg from '../../Image/home.jpeg'
 
 function Menu() {
     return (
@@ -11,19 +11,16 @@ function Menu() {
                 <Heading color={'#000'} fontFamily='Lobster' fontSize={40} borderBottom={'2px solid #f7a010'}>Our Menu</Heading>
               
             </Flex>
-            <Flex w={'80%'} mx={'auto'} color={'black'} mt={12} justify={'center'}>
-                <SimpleGrid columns={{ base: 1, sm: 2}} gap={12}>
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='QUALITY' description='LIONUP DEVELOPS THE MOST COST' />
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='CUSTOMER' description='OUR GOAL IS TO' />
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='Mr-Shezi' description='OUR GOAL IS TO CIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='abcd' description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='QUALITY' description='LIONUP DEVELOPS THE MOST COST' />
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='CUSTOMER' description='OUR GOAL IS TO' />
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='Mr-Shezi' description='OUR GOAL IS TO CIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
-                    <MenuCard icon={<FiUsers fontSize={52} />} heading='abcd' description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
+            <Flex  color={'black'} mt={12} justify={'center'} w={'80%'} mx={'auto'}>
+                <SimpleGrid columns={{ base: 1, md: 2}} gap={12}  >
+                    <MenuCard img={menuImg} heading='Mr-shezi' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
+                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
+                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
+                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
+                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
+                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
                 </SimpleGrid>
             </Flex>
-            {/* <ServiceCard/> */}
         </Box>
     )
 }
