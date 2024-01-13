@@ -1,25 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&family=Lobster&display=swap');
 
-*{
-  font-family: 'Poppins', sans-serif;
-
+* {
+  font-family: 'Jost', sans-serif;
 }
 
-.header{
+body {
+  width: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+/* 
+.container {
+  height: 200vh; 
+  display: flex;
+  flex-direction: column;
+}
+.circle {
+  width: 50%;
+  animation: rotateAnimation 3s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+.header {
   background-color: transparent;
   transition: background-color 0.3s ease;
   position: fixed;
 }
 
-.header.scroll{
+.header.scroll {
   background-color: #000;
 }
 
 
-
 @keyframes slide-in {
   to {
-      transform: translateX(0);
+    transform: translateX(0);
   }
 }
-

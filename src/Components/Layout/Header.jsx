@@ -30,8 +30,8 @@ function Header() {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
-        <Box zIndex={999} w={'100%'} mx={'auto'} className={`header ${scrolled ? "scroll" : ''}`}>
-            <Flex alignItems={'center'} justify={'space-evenly'}>
+        <Box zIndex={999} w={'100%'}  className={`header ${scrolled ? "scroll" : ''}`}>
+            <Flex alignItems={'center'} mx={'auto'} w={'80%'} justify={'space-between'}>
                 <Link>
                     <Image src={img} h={70} w={70} my={2} />
                 </Link>
