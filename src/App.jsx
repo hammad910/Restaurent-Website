@@ -4,6 +4,7 @@ import Home from './Components/Home/Home'
 import Layout from './Components/Layout/Layout'
 import About from './Components/About/About'
 import Services from './Components/Services/Services'
+import Menu from './Components/Menu/Menu'
 function App() {
   return (
     <ChakraProvider>
@@ -11,6 +12,7 @@ function App() {
       <Home />
       <About />
       <Services/>
+      <Menu/>
       </Layout>
     </ChakraProvider>
   )
