@@ -20,11 +20,11 @@ function Services() {
                 <Heading color={'#000'} fontFamily='Lobster' fontSize={40} pt={8} borderBottom={'2px solid #f7a010'}>Our Services</Heading>
             </Flex>
             <Flex w={'80%'} mx={'auto'} color={'black'} mt={12}>
-                <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={8}  >
-                    <ServiceCard  heading= 'QUALITY'/>
-                    <ServiceCard icon='<FiUsers fontSize={60}/>' heading= 'CUSTOMER SATISFACTION' para='OUR GOAL IS TO GUARANTEE THAT EVERY SYSTEM, COMPONENT AND PROCESS MEETS SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'/>
-                    <ServiceCard/>
-                    <ServiceCard/>
+                <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={16}>
+                    <ServiceCard icon={<FiUsers fontSize={52}/>}  heading= 'QUALITY' description='LIONUP DEVELOPS THE MOST COST EFFECTIVE SOLUTIONS FOR ALL OF YOUR DIGITAL NEEDS.WE ARE COMMITTED TO DELIVERING QUALITY SERVICES AT THE BEST PRICES; NO MATTER WHAT YOU NEED.'/>
+                    <ServiceCard icon={<FiUsers fontSize={52}/>} heading= 'CUSTOMER SATISFACTION' description='OUR GOAL IS TO GUARANTEE THAT EVERY SYSTEM, COMPONENT AND PROCESS MEETS SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'/>
+                    <ServiceCard icon={<FiUsers fontSize={52}/>} heading='Mr-Shezi' description='CUSTOMER SATISFACTION' description='OUR GOAL IS TO GUARANTEE THAT EVERY SYSTEM, COMPONENT AND PROCESS MEETS SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'/>
+                    <ServiceCard icon={<FiUsers fontSize={52}/>} heading='abcd' description='CUSTOMER SATISFACTION' description='OUR GOAL IS TO GUARANTEE THAT EVERY SYSTEM, COMPONENT AND PROCESS MEETS SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'/>
                     {/* Features  1*/}
                     {/* {serviceCard.map({val, index},{
                 

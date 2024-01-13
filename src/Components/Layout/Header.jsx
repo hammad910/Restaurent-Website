@@ -41,7 +41,7 @@ function Header() {
                     )}
                 </Flex>
                 <Flex display={{ base: 'none', lg: 'flex' }}>
-                    <Button bgColor={'#f7a010'} fontWeight={'bold'} _hover={{ bgColor: '#f7a010', border: 'black', }} >Contact Us</Button>
+                    <Button className='contact-btn' bgColor={'#f7a010'} fontWeight={'bold'} _hover={{ border: 'black' }} transition={'transform .3s ease'}>Contact Us</Button>
                 </Flex>
                 <Flex display={{ lg: 'none' }}>
                     <Icon onClick={onOpen} fontSize={30} color={'#f7a010'}>
