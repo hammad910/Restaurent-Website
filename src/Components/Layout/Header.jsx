@@ -4,12 +4,13 @@ import img from '../../Image/shezicircle.png'
 import { Drawer, DrawerBody, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton } from '@chakra-ui/react'
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link as ReactRouterLink } from 'react-router-dom'
 function Header() {
 
     const navLink = [
         { name: 'Home', path: "/" },
         { name: 'About', path: "/About" },
-        { name: 'Service', path: "/Service" },
+        { name: 'Service', path: "/Services" },
         { name: 'Menu', path: "/Menu" },
     ]
 
@@ -37,7 +38,7 @@ function Header() {
                 </Link>
                 <Flex gap={8} textTransform={'uppercase'} fontSize={20} color={'white'} display={{ base: 'none', lg: 'flex' }} >
                     {navLink.map((link, index) =>
-                        <Link _hover={{ color: '#f7a010', borderTop: '2px solid white', cursor: 'pointer', }} key={index} >{link.name}</Link>
+                        <Link _hover={{ color: '#f7a010', borderTop: '2px solid white', cursor: 'pointer', }} as={ReactRouterLink} key={index} to={link.path}>{link.name}</Link>
                     )}
                 </Flex>
                 <Flex display={{ base: 'none', lg: 'flex' }}>

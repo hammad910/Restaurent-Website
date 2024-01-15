@@ -1,8 +1,6 @@
 import React from 'react'
-import { Box, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
-import { FaMap } from 'react-icons/fa';
+import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react"
 import { FiUsers } from 'react-icons/fi';
-import { AiOutlineCoffee } from 'react-icons/ai';
 import ServiceCard from './ServiceCard';
 
 function Services() {

@@ -2,23 +2,20 @@ import React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ReactDOM from 'react-dom';
-import Home from './Components/Home/Home'
-import Layout from './Components/Layout/Layout'
-import About from './Components/About/About'
-import Services from './Components/Services/Services'
-import Menu from './Components/Menu/Menu'
+import Home from './Pages/Home/Home'
+import About from './Pages/About/About'
+import Services from './Pages/Service/Service'
+import Menu from './Pages/Menu/Menu'
 function App() {
   return (
     <ChakraProvider>
       <BrowserRouter>
         <Routes>
-          {/* <Layout> */}
-            <Route path='' element={<Home />} />
-            <Route path='/About' element={<About />} />
-            <Route path='/Services' element={<Services />} />
-            <Route path='/Menu' element={<Menu />} />
-          {/* </Layout> */}
-          </Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Services' element={<Services />} />
+          <Route path='/Menu' element={<Menu />} />
+        </Routes>
       </BrowserRouter>
     </ChakraProvider>
   )
