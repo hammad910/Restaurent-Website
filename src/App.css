@@ -16,25 +16,7 @@ body {
   transform: scale(1.1)
 }
 
-/* 
-.container {
-  height: 200vh; 
-  display: flex;
-  flex-direction: column;
-}
-.circle {
-  width: 50%;
-  animation: rotateAnimation 3s linear infinite;
-}
 
-@keyframes rotateAnimation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-} */
 
 .header {
   background-color: transparent;

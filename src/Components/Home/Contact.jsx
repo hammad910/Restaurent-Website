@@ -72,7 +72,7 @@ export default function Contact() {
                 <Box mt={4}>
                     <FaGripLines fontSize={30} />
                 </Box>
-                <Text pt={4} textAlign={'center'} data-aos="slide-up" data-aos-duration="10000" >Tell Us About Your Project. We’ll Be In Touch Soon.</Text>
+                <Text pt={4} textAlign={'center'} data-aos="slide-up" data-aos-duration="10000" >Reach out to us and let us know if there is anything we can do for you.</Text>
             </Flex>
 
             {/* Form */}
@@ -130,17 +130,18 @@ export default function Contact() {
                                 />
                                 {errors.description && touched.description ? (<Text fontSize={12} color="red">{errors.description}</Text>) : null}
                             </Box>
-                            <Flex justify={'center'}>
+                            <Flex justify={'center'} >
                                 <Button
                                     bgColor={'#231f20'}
-                                    _hover={{ bgColor: '#cf130c', transition: 'all .3s', cursor: 'pointer' }}
+                                    _hover={{ bgColor: '#f7a010', color:'black' ,transition: 'all .3s', cursor: 'pointer' }}
                                     color={'white'}
                                     rounded={4}
-                                    w={{ base: '100%', sm: '60%', lg: '50%' }}
+                                    w={{ base: '100%', lg: '50%' }}
                                     mt={6}
                                     h={10}
                                     fontSize={{ base: 12, md: 16 }}
                                     type="submit"
+                                    
                                 >Let's Start A Conversation</Button>
                             </Flex>
                         </Form>

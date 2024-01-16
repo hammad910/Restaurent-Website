@@ -1,5 +1,4 @@
 import React from 'react'
-import { dataContext } from './MenuModal'
 import {
     Box,
     chakra,
