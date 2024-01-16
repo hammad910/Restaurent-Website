@@ -31,7 +31,7 @@ function Header() {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     return (
-        <Box zIndex={999} w={'100%'}  className={`header ${scrolled ? "scroll" : ''}`}>
+        <Box zIndex={999} w={'100%'} className={`header ${scrolled ? "scroll" : ''}`}>
             <Flex alignItems={'center'} mx={'auto'} w={'80%'} justify={'space-between'}>
                 <Link>
                     <Image src={img} h={70} w={70} my={2} />
@@ -42,41 +42,44 @@ function Header() {
                     )}
                 </Flex>
                 <Flex display={{ base: 'none', lg: 'flex' }}>
-                    <Button className='contact-btn' bgColor={'#f7a010'} fontWeight={'bold'} _hover={{ border: 'black' }} transition={'transform .3s ease'}>Contact Us</Button>
-                </Flex>
-                <Flex display={{ lg: 'none' }}>
-                    <Icon onClick={onOpen} fontSize={30} color={'#f7a010'}>
-                        <GiHamburgerMenu />
-                    </Icon>
-                </Flex>
-            </Flex>
-            <Drawer isOpen={isOpen} onClose={onClose}>
-                <DrawerOverlay />
-                <DrawerContent>
-                    <DrawerCloseButton mt={6} fontSize={14} />
-                    <DrawerHeader>
-                        <Image src={img} h={70} w={70} />
-                    </DrawerHeader>
+                    <Link as={ReactRouterLink} to={'/Contact'} >
+                        <Button className='contact-btn' bgColor={'#f7a010'} fontWeight={'bold'} _hover={{ border: 'black' }} transition={'transform .3s ease'}>Contact Us</Button>
+                        </Link>
 
-                    <DrawerBody>
-                        <Stack spacing='24px'>
-                            {navLink.map((link, index) =>
-                                <Link fontSize='17px' fontWeight='400' key={index}>{link.name}</Link>
-                            )}
-                        </Stack>
-                    </DrawerBody>
-
-
-                    <DrawerFooter >
-                        <Flex fontSize={'25px'} gap={'10px'} cursor={'pointer'} position={'absolute'} right={'90'} mb={10} >
-                            <FaFacebook />
-                            <FaTwitter />
-                            <FaInstagram />
-                            <FaLinkedin />
                         </Flex>
-                    </DrawerFooter>
-                </DrawerContent>
-            </Drawer>
+                        <Flex display={{ lg: 'none' }}>
+                            <Icon onClick={onOpen} fontSize={30} color={'#f7a010'}>
+                                <GiHamburgerMenu />
+                            </Icon>
+                        </Flex>
+                </Flex>
+                <Drawer isOpen={isOpen} onClose={onClose}>
+                    <DrawerOverlay />
+                    <DrawerContent>
+                        <DrawerCloseButton mt={6} fontSize={14} />
+                        <DrawerHeader>
+                            <Image src={img} h={70} w={70} />
+                        </DrawerHeader>
+
+                        <DrawerBody>
+                            <Stack spacing='24px'>
+                                {navLink.map((link, index) =>
+                                    <Link fontSize='17px' fontWeight='400' key={index}>{link.name}</Link>
+                                )}
+                            </Stack>
+                        </DrawerBody>
+
+
+                        <DrawerFooter >
+                            <Flex fontSize={'25px'} gap={'10px'} cursor={'pointer'} position={'absolute'} right={'90'} mb={10} >
+                                <FaFacebook />
+                                <FaTwitter />
+                                <FaInstagram />
+                                <FaLinkedin />
+                            </Flex>
+                        </DrawerFooter>
+                    </DrawerContent>
+                </Drawer>
         </Box>
     )
 }

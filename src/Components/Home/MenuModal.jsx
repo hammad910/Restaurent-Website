@@ -1,7 +1,7 @@
 import React, { createContext } from 'react'
 const dataContext = createContext()
 function MenuModal() {
-    const OverlayOne = () => (
+    const OverlayOne = ({children}) => (
         <ModalOverlay
             bg='blackAlpha.300'
             backdropFilter='blur(5px)'
@@ -12,10 +12,10 @@ function MenuModal() {
 
     return (
         <dataContext.Provider value={{setOverlay}}>
-            <Modal isCentered isOpen={isOpen} onClose={onClose} size={{ base: 'sm', md: '2xl', lg: '5xl' }} >
+            {children}
+            {/* <Modal isCentered isOpen={isOpen} onClose={onClose} size={{ base: 'sm', md: '2xl', lg: '5xl' }} >
                 {overlay}
                 <ModalContent>
-                    {/* <ModalHeader fontSize={'2xl'} textAlign={'center'}></ModalHeader> */}
                     <ModalCloseButton />
                     <ModalBody>
                         <SimpleGrid
@@ -27,7 +27,6 @@ function MenuModal() {
                                 <Image
                                     rounded={'md'}
                                     src={menuImg}
-                                    // fit={'cover'}
                                     align={'center'}
                                 />
                             </Flex>
@@ -61,7 +60,7 @@ function MenuModal() {
                         <Button onClick={onClose}>Close</Button>
                     </ModalFooter>
                 </ModalContent>
-            </Modal>
+            </Modal> */}
         </dataContext.Provider>
     )
 }

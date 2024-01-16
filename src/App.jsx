@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
 import Services from './Pages/Service/Service'
 import Menu from './Pages/Menu/Menu'
+import ContactUs from './Pages/ContactUs/ContactUs'
 function App() {
   return (
     <ChakraProvider>
@@ -15,6 +16,7 @@ function App() {
           <Route path='/About' element={<About />} />
           <Route path='/Services' element={<Services />} />
           <Route path='/Menu' element={<Menu />} />
+          <Route path='/Contact' element={<ContactUs />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>

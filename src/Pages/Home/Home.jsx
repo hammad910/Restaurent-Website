@@ -6,6 +6,7 @@ import Menu from '../../Components/Home/Menu'
 import MenuCard from '../../Components/Home/MenuCard'
 import Service from '../../Components/Home/Services'
 import ServiceCard from '../../Components/Home/ServiceCard'
+import Contact from '../../Components/Home/Contact'
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
         <ServiceCard/>
         <Menu/>
         <MenuCard/>
+        <Contact/>
     </Layout>
   )
 }
