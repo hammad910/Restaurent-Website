@@ -1,9 +1,25 @@
 import React from 'react'
-import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react"
+import { Box, Flex, Heading, SimpleGrid, Text, Link, Button } from "@chakra-ui/react"
 import { FiUsers } from 'react-icons/fi';
-import ServiceCard from './ServiceCard';
+import { Link as ReactRouterLink } from 'react-router-dom'
+// import ServiceCard from './ServiceCard';
 
 function Services() {
+
+    const Services = [
+        {
+            icon: <FiUsers fontSize={52} />, heading: 'QUALITY', description: 'LIONUP DEVELOPS THE MOST COST EFFECTIVE SOLUTIONS FOR ALL OF YOUR DIGITAL NEEDS.WE ARE COMMITTED TO DELIVERING QUALITY SERVICES AT THE BEST PRICES; NO MATTER WHAT YOU NEED.'
+        },
+        {
+            icon: <FiUsers fontSize={52} />, heading: 'QUALITY', description: 'LIONUP DEVELOPS THE MOST COST EFFECTIVE SOLUTIONS FOR ALL OF YOUR DIGITAL NEEDS.WE ARE COMMITTED TO DELIVERING QUALITY SERVICES AT THE BEST PRICES; NO MATTER WHAT YOU NEED.'
+        },
+        {
+            icon: <FiUsers fontSize={52} />, heading: 'QUALITY', description: 'LIONUP DEVELOPS THE MOST COST EFFECTIVE SOLUTIONS FOR ALL OF YOUR DIGITAL NEEDS.WE ARE COMMITTED TO DELIVERING QUALITY SERVICES AT THE BEST PRICES; NO MATTER WHAT YOU NEED.'
+        },
+        {
+            icon: <FiUsers fontSize={52} />, heading: 'QUALITY', description: 'LIONUP DEVELOPS THE MOST COST EFFECTIVE SOLUTIONS FOR ALL OF YOUR DIGITAL NEEDS.WE ARE COMMITTED TO DELIVERING QUALITY SERVICES AT THE BEST PRICES; NO MATTER WHAT YOU NEED.'
+        },
+    ]
 
     return (
         <Box bg={'#fff'} color={"white"}>
@@ -12,12 +28,24 @@ function Services() {
             </Flex>
             <Flex w={'80%'} mx={'auto'} color={'black'} mt={12}>
                 <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={16}>
-                    <ServiceCard icon={<FiUsers fontSize={52}/>}  heading= 'QUALITY' description='LIONUP DEVELOPS THE MOST COST EFFECTIVE SOLUTIONS FOR ALL OF YOUR DIGITAL NEEDS.WE ARE COMMITTED TO DELIVERING QUALITY SERVICES AT THE BEST PRICES; NO MATTER WHAT YOU NEED.'/>
-                    <ServiceCard icon={<FiUsers fontSize={52}/>} heading= 'CUSTOMER SATISFACTION' description='OUR GOAL IS TO GUARANTEE THAT EVERY SYSTEM, COMPONENT AND PROCESS MEETS SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'/>
-                    <ServiceCard icon={<FiUsers fontSize={52}/>} heading='Mr-Shezi' description='OUR GOAL IS TO GUARANTEE THAT EVERY SYSTEM, COMPONENT AND PROCESS MEETS SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'/>
-                    <ServiceCard icon={<FiUsers fontSize={52}/>} heading='abcd' description='OUR GOAL IS TO GUARANTEE THAT EVERY SYSTEM, COMPONENT AND PROCESS MEETS SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'/>
+                    {Services.map((card, index) => (
+                        <ServiceCard key={index} icon={card.icon} heading={card.heading} description={card.description} />
+                    ))}
                 </SimpleGrid>
+
             </Flex>
+        </Box>
+    )
+}
+
+function ServiceCard({ icon, heading, description }) {
+    return (
+        <Box boxShadow={'2xl'} h={'120%'} pt={6} _hover={{ cursor: 'pointer', bgColor: '#f7a010', }} data-aos="slide-up" data-aos-duration="6000" w={'100%'}>
+            <Box w={'80%'} mx={'auto'}>
+                <Flex direction={'column'}>{icon}</Flex>
+                <Text fontSize={20} fontWeight={'bold'} py={2}>{heading}</Text>
+                <Text fontSize={"13px"}>{description}</Text>
+            </Box>
         </Box>
     )
 }

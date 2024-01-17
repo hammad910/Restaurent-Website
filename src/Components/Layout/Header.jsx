@@ -44,42 +44,41 @@ function Header() {
                 <Flex display={{ base: 'none', lg: 'flex' }}>
                     <Link as={ReactRouterLink} to={'/Contact'} >
                         <Button className='contact-btn' bgColor={'#f7a010'} fontWeight={'bold'} _hover={{ border: 'black' }} transition={'transform .3s ease'}>Contact Us</Button>
-                        </Link>
-
-                        </Flex>
-                        <Flex display={{ lg: 'none' }}>
-                            <Icon onClick={onOpen} fontSize={30} color={'#f7a010'}>
-                                <GiHamburgerMenu />
-                            </Icon>
-                        </Flex>
+                    </Link>
                 </Flex>
-                <Drawer isOpen={isOpen} onClose={onClose}>
-                    <DrawerOverlay />
-                    <DrawerContent>
-                        <DrawerCloseButton mt={6} fontSize={14} />
-                        <DrawerHeader>
-                            <Image src={img} h={70} w={70} />
-                        </DrawerHeader>
+                <Flex display={{ lg: 'none' }}>
+                    <Icon onClick={onOpen} fontSize={30} color={'#f7a010'}>
+                        <GiHamburgerMenu />
+                    </Icon>
+                </Flex>
+            </Flex>
+            <Drawer isOpen={isOpen} onClose={onClose}>
+                <DrawerOverlay />
+                <DrawerContent>
+                    <DrawerCloseButton mt={6} fontSize={14} />
+                    <DrawerHeader>
+                        <Image src={img} h={70} w={70} />
+                    </DrawerHeader>
 
-                        <DrawerBody>
-                            <Stack spacing='24px'>
-                                {navLink.map((link, index) =>
-                                    <Link fontSize='17px' fontWeight='400' key={index}>{link.name}</Link>
-                                )}
-                            </Stack>
-                        </DrawerBody>
+                    <DrawerBody>
+                        <Stack spacing='24px'>
+                            {navLink.map((link, index) =>
+                                <Link fontSize='17px' fontWeight='400' key={index}>{link.name}</Link>
+                            )}
+                        </Stack>
+                    </DrawerBody>
 
 
-                        <DrawerFooter >
-                            <Flex fontSize={'25px'} gap={'10px'} cursor={'pointer'} position={'absolute'} right={'90'} mb={10} >
-                                <FaFacebook />
-                                <FaTwitter />
-                                <FaInstagram />
-                                <FaLinkedin />
-                            </Flex>
-                        </DrawerFooter>
-                    </DrawerContent>
-                </Drawer>
+                    <DrawerFooter >
+                        <Flex fontSize={'25px'} gap={'10px'} cursor={'pointer'} position={'absolute'} right={'90'} mb={10} >
+                            <FaFacebook />
+                            <FaTwitter />
+                            <FaInstagram />
+                            <FaLinkedin />
+                        </Flex>
+                    </DrawerFooter>
+                </DrawerContent>
+            </Drawer>
         </Box>
     )
 }

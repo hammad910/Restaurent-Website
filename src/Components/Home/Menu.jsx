@@ -1,11 +1,9 @@
 import React from 'react'
 import {
     Box, Stack, Text, Flex, VStack, Heading, SimpleGrid, useColorModeValue, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Button, Image,
-    Container,
-    Avatar,
-    IconButton
+    Link
 } from '@chakra-ui/react'
-// import MenuCard from './MenuCard'
+import { Link as ReactRouterLink } from 'react-router-dom'
 import menuImg from '../../Image/home.jpeg'
 // import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
 // import { Navigation } from 'swiper/modules';
@@ -21,14 +19,24 @@ function Menu() {
 
     const MenuCard = [
         {
-            heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
         },
         {
-            heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
         },
         {
-            heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
         },
+        {
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+        },
+        {
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+        },
+        {
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+        },
+
     ]
 
     const OverlayOne = () => (
@@ -47,7 +55,7 @@ function Menu() {
             </Flex>
             <Flex color={'black'} mt={12} justify={'center'} w={'80%'} mx={'auto'}>
                 <SimpleGrid columns={{ base: 1, md: 2 }} gap={12} onClick={() => {
-                    setOverlay(<OverlayOne title='mr-shezi' />)
+                    setOverlay(<OverlayOne   />)
                     onOpen()
                 }}>
                     {/* <Swiper
@@ -83,15 +91,24 @@ function Menu() {
                     >
                     <Swiper /> */}
 
-                    {MenuCard.map((card, index) => {
-                        <MenuBox  key={index} heading={card.heading} price={card.price} description={card.description} />
-                    })}
-                    {/* <MenuCard img={menuImg} heading='abcd' price='299' description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
-                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
-                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
-                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' />
-                    <MenuCard img={menuImg} heading='abcd' price="599Rs" description='OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS' /> */}
-
+                    {MenuCard.map((card, index) => (
+                        <MenuBox key={index} image={card.image} heading={card.heading} price={card.price} description={card.description} />
+                    ))}
+                <Flex justify={'center'} w={'210%'}>
+                    <Link as={ReactRouterLink} to={'/Menu'} >
+                    <Button
+                                    bgColor={'#231f20'}
+                                    _hover={{ bgColor: '#f7a010', color:'black' ,transition: 'all .3s', cursor: 'pointer' }}
+                                    color={'white'}
+                                    rounded={4}
+                                    w={'100%'}
+                                    h={10}
+                                    fontSize={{ base: 12, md: 16 }}
+                                    type="submit"
+                                    
+                                >Visit Our Full Menu</Button>
+                    </Link>
+                </Flex>
                 </SimpleGrid>
                 <Modal isCentered isOpen={isOpen} onClose={onClose} size={{ base: 'sm', md: '2xl', lg: '5xl' }} >
                     {overlay}
@@ -103,13 +120,15 @@ function Menu() {
                                 spacing={{ base: 8, md: 10 }}
                                 py={{ base: 18, md: 24 }}
                             >
-                                <Flex justify={'center'}>
+                                {/* {MenuCard.map((card, index) => ( */}
+                                <Flex justify={'center'} >
                                     <Image
                                         rounded={'md'}
-                                        src={menuImg}
+                                        src='https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220'
                                         align={'center'}
                                     />
                                 </Flex>
+                                {/* ))} */}
                                 <Stack spacing={{ base: 6, md: 10 }}>
                                     <Box as={'header'}>
                                         <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
@@ -146,13 +165,13 @@ function Menu() {
     )
 }
 
-function MenuBox({ heading, price, description }) {
+function MenuBox({ image, heading, price, description }) {
     return (
         <Box boxShadow={'2xl'} _hover={{ cursor: 'pointer', bgColor: '#f7a010' }} data-aos="slide-up" data-aos-duration="6000" >
-            <Flex w={'80%'} mx={'auto'} _hover={{}} gap={8}  >
-                {/* <Flex direction={'column'} mt={4}> */}
-                {/* <Image src={props.img} w={32} /> */}
-                {/* </Flex> */}
+            <Flex w={'80%'} mx={'auto'} gap={8}  >
+                <Flex direction={'column'} mt={4}>
+                    <Image src={image} w={32} />
+                </Flex>
                 <Flex direction={'column'} pt={4}>
                     <Flex justify={'space-between'}>
                         <Text fontSize={20} fontWeight={'bold'}>{heading}</Text>

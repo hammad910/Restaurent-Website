@@ -5,7 +5,7 @@ import { Box } from '@chakra-ui/react'
 
 function Component() {
   return (
-    <Box w={"200%"}>
+    <Box w={'150%'}>
       <Layout>
         <Contact />
       </Layout>
