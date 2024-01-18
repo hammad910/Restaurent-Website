@@ -65,14 +65,14 @@ export default function Contact() {
     return (
         // Contact Us
         <Box id="Contact" py={20} w={'80%'} mx={'auto'}>
-            <Flex direction={'column'} alignItems={'center'}>
-                <Flex justify={'center'} data-aos="slide-up" data-aos-duration="12000">
+            <Flex direction={'column'} alignItems={'center'} data-aos="slide-up" data-aos-duration="6000">
+                <Flex justify={'center'} >
                     <Heading color={'#000'} fontFamily='Lobster' fontSize={40} borderBottom={'2px solid #f7a010'}>Contact Us</Heading>
                 </Flex>
                 <Box mt={4}>
                     <FaGripLines fontSize={30} />
                 </Box>
-                <Text pt={4} textAlign={'center'} data-aos="slide-up" data-aos-duration="10000" >Reach out to us and let us know if there is anything we can do for you.</Text>
+                <Text pt={4} textAlign={'center'} >Reach out to us and let us know if there is anything we can do for you.</Text>
             </Flex>
 
             {/* Form */}

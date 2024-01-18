@@ -1,6 +1,8 @@
 import React from 'react'
 import Contact from '../Home/Contact'
 import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { MdCall } from "react-icons/md";
 import {
     Box,
     Flex,
@@ -13,9 +15,9 @@ import {
 
 function ContactUs() {
     return (
-        <Box pt={14} bgColor="secondary.100">
-            <Flex w="80%" mx="auto" direction={{ base: 'column', lg: 'row' }}>
-                <Flex  direction="column" mt={20}>
+        <Box pt={14} bgColor="secondary.100" w={'100%'}>
+            <Flex w="80%" mx={'auto'} direction={{ base: 'column', lg: 'row' }}>
+                <Flex direction="column" mt={20}>
                     <Heading color="#000" fontFamily="Lobster" fontSize={40} data-aos="slide-up" data-aos-duration="12000">
                         Contact Us
                     </Heading>
@@ -23,10 +25,11 @@ function ContactUs() {
                         Reach out to us and let us know if there is anything we can do for you.
                     </Text>
                     <Flex mt={10}>
+                        {/* 1st card */}
                         <Box
-                            boxShadow="2xl" h="100%" mt={4} rounded="2xl" _hover={{ cursor: 'pointer', color: 'white', bgColor: '#f7a010' }} data-aos="slide-up"
-                            data-aos-duration="6000" w={{ base: '80%', lg: '30%' }} >
-                            <Box w="80%" mx="auto">
+                            boxShadow="2xl" h="120%" mt={4} rounded="2xl" _hover={{ cursor: 'pointer', color: 'white', bgColor: '#f7a010' }} data-aos="slide-up"
+                            data-aos-duration="6000" w={{ base: '80%', lg: '25%' }} >
+                            <Box w="80%" mx="auto" pt={4}>
                                 <Flex >
                                     <Icon w="40%" h="100%">
                                         <FaLocationDot />
@@ -37,15 +40,36 @@ function ContactUs() {
                                 </Text>
                             </Box>
                         </Box>
-                        <Box boxShadow="2xl" h="100%" mt={4} rounded="2xl" _hover={{ cursor: 'pointer', color: 'white', bgColor: '#f7a010' }} data-aos="slide-up" data-aos-duration="6000" w={{ base: '80%', lg: '30%' }} mx={2} >
-                            <Box w="80%" mx="auto">
+                        {/* 2nd card */}
+                        <Box boxShadow="2xl" h="120%" mt={4} rounded="2xl" _hover={{ cursor: 'pointer', color: 'white', bgColor: '#f7a010' }} data-aos="slide-up" data-aos-duration="6000" w={{ base: '80%', lg: '25%' }} mx={2} >
+                            <Box w="80%" mx="auto" pt={4}>
                                 <Flex>
                                     <Icon w="40%" h="100%">
-                                        <FaLocationDot />
+                                        <MdEmail />
                                     </Icon>
                                 </Flex>
                                 <Text fontSize={20} fontWeight="bold">
-                                    Nishtar Rd, Garden West, Karachi, Pakistan
+                                    shezi123@gmail.com
+                                </Text>
+                                <Text fontSize={16} fontWeight="bold" py={2}>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing
+                                </Text>
+
+                            </Box>
+                        </Box>
+                        {/* 3rd card */}
+                        <Box boxShadow="2xl" h="120%" mt={4} rounded="2xl" _hover={{ cursor: 'pointer', color: 'white', bgColor: '#f7a010' }} data-aos="slide-up" data-aos-duration="6000" w={{ base: '80%', lg: '25%' }} mx={2} >
+                            <Box w="80%" mx="auto" pt={4}>
+                                <Flex>
+                                    <Icon w="40%" h="100%">
+                                        <MdCall />
+                                    </Icon>
+                                </Flex>
+                                <Text fontSize={20} fontWeight="bold">
+                                    03311002232
+                                </Text>
+                                <Text fontSize={16} fontWeight="bold" py={2}>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing
                                 </Text>
                             </Box>
                         </Box>
@@ -56,11 +80,11 @@ function ContactUs() {
                 </Flex>
             </Flex >
             <Box mx="auto" textAlign="center" maxW={500} mt={16}>
-                <Text fontFamily="main" fontSize={18} color="#8795a1" letterSpacing={4}>
+                <Text fontFamily="Jost" fontSize={18} color="#8795a1" letterSpacing={4}>
                     VISIT US
                 </Text>
-                <Text fontFamily="sub" fontSize={{ base: 24, lg: 40 }}>
-                    Where we are located
+                <Text fontFamily="Lobster" fontSize={{ base: 24, lg: 42 }}>
+                    Where We Are Located
                 </Text>
             </Box>
             <Flex w="100%" mx="auto" pt={14} gap={20} flexDir={{ base: 'column', lg: 'row' }}>

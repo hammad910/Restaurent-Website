@@ -63,7 +63,7 @@ function Header() {
                     <DrawerBody>
                         <Stack spacing='24px'>
                             {navLink.map((link, index) =>
-                                <Link fontSize='17px' fontWeight='400' key={index}>{link.name}</Link>
+                                <Link as={ReactRouterLink} fontSize='17px' fontWeight='400' key={index} to={link.path}>{link.name}</Link>
                             )}
                         </Stack>
                     </DrawerBody>
