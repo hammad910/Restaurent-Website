@@ -3,17 +3,10 @@ import {
     Box, Stack, Text, Flex, VStack, Heading, SimpleGrid, useColorModeValue, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Button, Image,
     Link
 } from '@chakra-ui/react'
+import { ImSpoonKnife } from "react-icons/im";
+import { MdLunchDining } from "react-icons/md";
+import { MdOutlineFreeBreakfast } from "react-icons/md";
 import { Link as ReactRouterLink } from 'react-router-dom'
-import menuImg from '../../Image/home.jpeg'
-// import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-// import { Navigation } from 'swiper/modules';
-// import { Swiper, SwiperSlide, } from 'swiper/react';
-// import '../Swiper.css';
-// import 'swiper/css';
-// import 'swiper/swiper-bundle.css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-
 
 function Menu() {
 
@@ -50,66 +43,51 @@ function Menu() {
 
     return (
         <Box w={'100%'} mt={28}>
-            <Flex justify={'center'} data-aos="slide-up" data-aos-duration="6000">
+            <Flex justify={'center'} gap={8} data-aos="slide-up" data-aos-duration="6000">
                 <Heading color={'#000'} fontFamily='Lobster' fontSize={40} borderBottom={'2px solid #f7a010'}>Our Menu</Heading>
             </Flex>
-            <Flex color={'black'} mt={12} justify={'center'} w={'80%'} mx={'auto'}>
+            <Flex justify={'center'} data-aos="slide-up" data-aos-duration="6000" pt={10} gap={'30px'} fontWeight={'bold'} fontSize={{ base: 20, md: 30 }}>
+                <SimpleGrid columns={{ base: 1, sm: 3 }} >
+                    {/* BreakFast */}
+                    <Flex align={'center'}  _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }}>
+                        <MdOutlineFreeBreakfast />
+                        <Heading color={'#000'} fontFamily='Jost'>Breakfast</Heading>
+                    </Flex>
+                    {/* Lunch */}
+                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }}>
+                        <MdLunchDining />
+                        <Heading color={'#000'} fontFamily='Jost' >Lunch</Heading>
+                    </Flex>
+                    {/* Dinner */}
+                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }}>
+                        <ImSpoonKnife />
+                        <Heading color={'#000'} fontFamily='Jost' >Dinner</Heading>
+                    </Flex>
+                </SimpleGrid>
+            </Flex>
+            <Flex color={'black'} mt={12} justify={'center'} w={'80%'} mx={'auto'} direction={'column'}>
                 <SimpleGrid columns={{ base: 1, md: 2 }} gap={12} onClick={() => {
-                    setOverlay(<OverlayOne   />)
+                    setOverlay(<OverlayOne />)
                     onOpen()
                 }}>
-                    {/* <Swiper
-                        modules={[Navigation]}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        navigation={{
-                            nextEl: '.custom-btn-next',
-                            prevEl: '.custom-btn-prev',
-                        }}
-                        pagination={{ clickable: true }}
-                        breakpoints={{
-                            // when width is 320px
-                            320: {
-                                slidesPerView: 1,
-                                slidesPerGroup: 1,
-                            },
-                            // when width is 768px
-                            768: {
-                                slidesPerView: 2,
-                                slidesPerGroup: 2,
-                            },
-                            // when width is 1024px
-                            992: {
-                                slidesPerView: 3,
-                                slidesPerGroup: 3,
-                            },
-                            1280: {
-                                slidesPerView: 4,
-                                slidesPerGroup: 4,
-                            },
-                        }}
-                    >
-                    <Swiper /> */}
-
                     {MenuCard.map((card, index) => (
                         <MenuBox key={index} image={card.image} heading={card.heading} price={card.price} description={card.description} />
                     ))}
-                <Flex justify={'center'} w={'210%'}>
+                </SimpleGrid>
+                <Flex justify={'center'} >
                     <Link as={ReactRouterLink} to={'/Menu'} >
-                    <Button
-                                    bgColor={'#231f20'}
-                                    _hover={{ bgColor: '#f7a010', color:'black' ,transition: 'all .3s', cursor: 'pointer' }}
-                                    color={'white'}
-                                    rounded={4}
-                                    w={'100%'}
-                                    h={10}
-                                    fontSize={{ base: 12, md: 16 }}
-                                    type="submit"
-                                    
-                                >Visit Our Full Menu</Button>
+                        <Button
+                            bgColor={'#231f20'}
+                            _hover={{ bgColor: '#f7a010', color: 'black', transition: 'all .3s', cursor: 'pointer' }}
+                            color={'white'}
+                            mt={12}
+                            rounded={4}
+                            h={10}
+                            fontSize={{ base: 14, md: 18 }}
+                            type="submit"
+                        >Visit Our Full Menu</Button>
                     </Link>
                 </Flex>
-                </SimpleGrid>
                 <Modal isCentered isOpen={isOpen} onClose={onClose} size={{ base: 'sm', md: '2xl', lg: '5xl' }} >
                     {overlay}
                     <ModalContent>

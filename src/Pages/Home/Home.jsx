@@ -5,6 +5,7 @@ import About from '../../Components/Home/About'
 import Menu from '../../Components/Home/Menu'
 import Service from '../../Components/Home/Services'
 import Contact from '../../Components/Home/Contact'
+// import OurTeam from '../../Components/Home/OurTeam'
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
         <About/>
         <Service/>
         <Menu/>
+        {/* <OurTeam/> */}
         <Contact/>
     </Layout>
   )

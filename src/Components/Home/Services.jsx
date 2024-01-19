@@ -40,7 +40,7 @@ function Services() {
 
 function ServiceCard({ icon, heading, description }) {
     return (
-        <Box boxShadow={'2xl'} h={'120%'} pt={6} _hover={{ cursor: 'pointer', bgColor: '#f7a010', }} data-aos="slide-up" data-aos-duration="6000" w={'100%'}>
+        <Box boxShadow={'2xl'} h={'120%'} pt={6} _hover={{ cursor: 'pointer', bgColor: '#f7a010', rounded:'lg'}} data-aos="slide-up" data-aos-duration="6000" w={'100%'}>
             <Box w={'80%'} mx={'auto'}>
                 <Flex direction={'column'}>{icon}</Flex>
                 <Text fontSize={20} fontWeight={'bold'} py={2}>{heading}</Text>
