@@ -4,6 +4,7 @@ import video from '../../Image/video.mp4'
 
 function Index() {
   return (
+    // Hero Sec Only Video
     <Box href='/' w={'100%'}>
       <Box maxW={'auto'} maxH={'auto'}>
         <video width={'100%'} autoPlay muted loop >

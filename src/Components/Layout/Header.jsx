@@ -15,12 +15,14 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 function Header() {
+  // Header Links For Large Sizes
   const navDeskLink = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/About' },
     { name: 'Service', path: '/Services' },
     { name: 'Menu', path: '/Menu' },
   ];
+  // Header Links For Small Sizes
   const navMobLink = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/About' },
@@ -29,8 +31,8 @@ function Header() {
     { name: 'Contact', path: '/Contact' },
   ];
 
+  // Functionality For Header Transparent
   const [scrolled, setScrolled] = useState(false);
-
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setScrolled(true);
@@ -38,14 +40,12 @@ function Header() {
       setScrolled(false);
     }
   };
-
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -55,6 +55,7 @@ function Header() {
           <Image src={img} h={{base:50, md:70}} w={{base:50, md:70}} my={2} />
         </Link>
         <Flex gap={8} textTransform={'uppercase'} fontSize={20} color={'white'} display={{ base: 'none', lg: 'flex' }}>
+        {/* Map Function 1 For Large Sizes */}
           {navDeskLink.map((link, index) => (
             <Link
               _hover={{ color: '#f7a010', borderTop: '2px solid white', cursor: 'pointer' }}
@@ -73,12 +74,14 @@ function Header() {
             </Button>
           </Link>
         </Flex>
+        {/* 3 Lines Icon For Small Sizes */}
         <Flex display={{ lg: 'none' }}>
           <Icon onClick={onOpen} fontSize={{base:24, sm:28 ,md:30}} color={'#f7a010'}>
             <GiHamburgerMenu />
           </Icon>
         </Flex>
       </Flex>
+      {/* Side Drawer For Mobile */}
       <Drawer isOpen={isOpen} onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
@@ -90,6 +93,7 @@ function Header() {
           </DrawerHeader>
           <DrawerBody>
             <Stack spacing='24px'>
+        {/* Map Function 1 For Small Sizes */}
               {navMobLink.map((link, index) => (
                 <Link as={ReactRouterLink} fontSize='22px' fontWeight='400' key={index} to={link.path}>
                   {link.name}

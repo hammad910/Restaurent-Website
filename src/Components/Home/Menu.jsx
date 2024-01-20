@@ -1,4 +1,5 @@
-import React from 'react'
+
+import {React, useState} from 'react'
 import {
     Box, Stack, Text, Flex, VStack, Heading, SimpleGrid, useColorModeValue, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Button, Image,
     Link
@@ -10,28 +11,54 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 
 function Menu() {
 
+    // Dynamic menu card array
+
     const MenuCard = [
         {
-            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
+            heading: 'breakfast',
+            price: '599Rs',
+            description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
+            category: 'breakfast'
         },
         {
-            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
+            heading: 'breakfast',
+            price: '599Rs',
+            description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
+            category: 'breakfast'
         },
         {
-            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
+            heading: 'lunch',
+            price: '599Rs',
+            description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
+            category: 'lunch'
         },
         {
-            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
+            heading: 'lunch',
+            price: '599Rs',
+            description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
+            category: 'lunch'
         },
         {
-            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
+            heading: 'dinner',
+            price: '599Rs',
+            description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
+            category: 'dinner'
         },
         {
-            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220', heading: 'Mr-shezi', price: '599Rs', description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS'
+            image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
+            heading: 'dinner',
+            price: '599Rs',
+            description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
+            category: 'dinner'
         },
-
     ]
 
+    // Making Modal For Product Detail
     const OverlayOne = () => (
         <ModalOverlay
             bg='blackAlpha.300'
@@ -39,38 +66,58 @@ function Menu() {
         />
     )
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const [overlay, setOverlay] = React.useState(<OverlayOne />)
+    const [overlay, setOverlay] = useState(<OverlayOne />)
 
+    // Filter For Category Management
+    const [items, setItems] = useState(MenuCard)
+    const filtersItem = (category) => {
+        const updatedItem = MenuCard.filter((curElem) => {
+            return curElem.category === category
+        })
+        setItems(updatedItem)
+    }
+    const [isActive, setIsActive] = useState(false);
+    // const [ActiveCategory, setActiveCategory] = useState(null)
+    // setActiveCategory(filtersItem.category);
+// borderBottom={ActiveCategory === filtersItem.category ? '#000' : 'none '}
     return (
+        // Menu in Home page
         <Box w={'100%'} mt={28}>
             <Flex justify={'center'} gap={8} data-aos="slide-up" data-aos-duration="6000">
                 <Heading color={'#000'} fontFamily='Lobster' fontSize={40} borderBottom={'2px solid #f7a010'}>Our Menu</Heading>
             </Flex>
-            <Flex justify={'center'} data-aos="slide-up" data-aos-duration="6000" pt={10} gap={'30px'} fontWeight={'bold'} fontSize={{ base: 20, md: 30 }}>
-                <SimpleGrid columns={{ base: 1, sm: 3 }} >
+            <Flex justify={'center'} data-aos="slide-up" data-aos-duration="6000" pt={10} fontWeight={'bold'} fontSize={{ base: 20, md: 30 }}>
+            {/* Using SimpleGrid For Responsiveness */}
+                <SimpleGrid columns={{ base: 2, sm: 4 }} gap={8} justifyContent={'space-evenly'}>
                     {/* BreakFast */}
-                    <Flex align={'center'}  _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }}>
+                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => filtersItem('breakfast')}>
                         <MdOutlineFreeBreakfast />
-                        <Heading color={'#000'} fontFamily='Jost'>Breakfast</Heading>
+                        <Heading  fontFamily='Jost' >Breakfast</Heading>
                     </Flex>
                     {/* Lunch */}
-                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }}>
+                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => filtersItem('lunch')}>
                         <MdLunchDining />
                         <Heading color={'#000'} fontFamily='Jost' >Lunch</Heading>
                     </Flex>
                     {/* Dinner */}
-                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }}>
+                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => filtersItem('dinner')}>
                         <ImSpoonKnife />
                         <Heading color={'#000'} fontFamily='Jost' >Dinner</Heading>
+                    </Flex>
+                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => setItems(MenuCard)}>
+                        <ImSpoonKnife />
+                        <Heading color={'#000'} fontFamily='Jost' >All</Heading>
                     </Flex>
                 </SimpleGrid>
             </Flex>
             <Flex color={'black'} mt={12} justify={'center'} w={'80%'} mx={'auto'} direction={'column'}>
+            {/* Again Using SimpleGrid For Responsiveness */}
                 <SimpleGrid columns={{ base: 1, md: 2 }} gap={12} onClick={() => {
                     setOverlay(<OverlayOne />)
                     onOpen()
                 }}>
-                    {MenuCard.map((card, index) => (
+                {/* MenuCard Map Function Its Name Is "items" Bcuz Of UseState */}
+                    {items.map((card, index) => (
                         <MenuBox key={index} image={card.image} heading={card.heading} price={card.price} description={card.description} />
                     ))}
                 </SimpleGrid>
@@ -88,43 +135,31 @@ function Menu() {
                         >Visit Our Full Menu</Button>
                     </Link>
                 </Flex>
+                {/* Using Modal For Display Product Detail  */}
                 <Modal isCentered isOpen={isOpen} onClose={onClose} size={{ base: 'sm', md: '2xl', lg: '5xl' }} >
                     {overlay}
                     <ModalContent>
                         <ModalCloseButton />
+                        {/* Modal Body */}
                         <ModalBody>
-                            <SimpleGrid
-                                columns={{ base: 1, lg: 2 }}
-                                spacing={{ base: 8, md: 10 }}
-                                py={{ base: 18, md: 24 }}
-                            >
-                                {/* {MenuCard.map((card, index) => ( */}
+                        {/* SimpleGrid */}
+                            <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} py={{ base: 18, md: 24 }} >
                                 <Flex justify={'center'} >
-                                    <Image
-                                        rounded={'md'}
-                                        src='https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220'
-                                        align={'center'}
-                                    />
+                                    <Image rounded={'md'} src='https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220' align={'center'} />
                                 </Flex>
-                                {/* ))} */}
                                 <Stack spacing={{ base: 6, md: 10 }}>
                                     <Box as={'header'}>
                                         <Heading lineHeight={1.1} fontWeight={600} fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}>
-                                            abcd
-                                        </Heading>
-                                        <Text fontWeight={300} fontSize={'2xl'}>
-                                            699$
-                                        </Text>
+                                            abcd </Heading>
+                                        <Text fontWeight={300} fontSize={'2xl'}> 699$ </Text>
                                     </Box>
                                     <Stack spacing={{ base: 4, sm: 6 }} direction={'column'} >
                                         <VStack spacing={{ base: 4, sm: 6 }}>
                                             <Text fontSize={'2xl'} fontWeight={'300'}>
-                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                                eirmod tempor invidunt ut labore
+                                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, nonumy eirmod tempor invidunt ut labore
                                             </Text>
                                         </VStack>
                                     </Stack>
-
                                     <Button rounded={'none'} w={'full'} mt={8} size={'lg'} py={'7'} bg={useColorModeValue('gray.900', 'gray.50')} color={useColorModeValue('white', 'gray.900')}
                                         textTransform={'uppercase'}
                                         _hover={{ transform: 'translateY(2px)', boxShadow: 'lg', }}>
@@ -133,6 +168,7 @@ function Menu() {
                                 </Stack>
                             </SimpleGrid>
                         </ModalBody>
+                        {/* Modal Footer */}
                         <ModalFooter>
                             <Button onClick={onClose}>Close</Button>
                         </ModalFooter>
@@ -143,6 +179,7 @@ function Menu() {
     )
 }
 
+// Styling Map Function 
 function MenuBox({ image, heading, price, description }) {
     return (
         <Box boxShadow={'2xl'} _hover={{ cursor: 'pointer', bgColor: '#f7a010' }} data-aos="slide-up" data-aos-duration="6000" >

@@ -64,7 +64,7 @@ export default function Contact() {
 
     return (
         // Contact Us
-        <Box id="Contact" py={20} w={'80%'} mx={'auto'}>
+        <Box id="Contact" py={10} w={'80%'} mx={'auto'}>
             <Flex direction={'column'} alignItems={'center'} data-aos="slide-up" data-aos-duration="6000">
                 <Flex justify={'center'} >
                     <Heading color={'#000'} fontFamily='Lobster' fontSize={40} borderBottom={'2px solid #f7a010'}>Contact Us</Heading>
@@ -75,7 +75,7 @@ export default function Contact() {
                 <Text pt={4} textAlign={'center'} >Reach out to us and let us know if there is anything we can do for you.</Text>
             </Flex>
 
-            {/* Form */}
+            {/* Form With Validation*/}
             <Formik >
                 <Box w={{ base: '100%', md: '60%' }} boxShadow='2xl' mx={'auto'} my={'10'} data-aos="slide-up" data-aos-duration="8000" >
                     <Flex bgColor={"white"} justifyContent={'center'} py={10} w={'90%'} mx={'auto'}>
@@ -151,5 +151,3 @@ export default function Contact() {
         </Box>
     )
 }
-
-// from_name

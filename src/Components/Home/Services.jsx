@@ -5,7 +5,7 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 // import ServiceCard from './ServiceCard';
 
 function Services() {
-
+    // Dynamic Services Array
     const Services = [
         {
             icon: <FiUsers fontSize={52} />, heading: 'QUALITY', description: 'LIONUP DEVELOPS THE MOST COST EFFECTIVE SOLUTIONS FOR ALL OF YOUR DIGITAL NEEDS.WE ARE COMMITTED TO DELIVERING QUALITY SERVICES AT THE BEST PRICES; NO MATTER WHAT YOU NEED.'
@@ -27,6 +27,7 @@ function Services() {
                 <Heading color={'#000'} fontFamily='Lobster' fontSize={40} pt={8} borderBottom={'2px solid #f7a010'}>Our Services</Heading>
             </Flex>
             <Flex w={'80%'} mx={'auto'} color={'black'} mt={12}>
+            {/* SimpleGrid For Responsiveness */}
                 <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={16}>
                     {Services.map((card, index) => (
                         <ServiceCard key={index} icon={card.icon} heading={card.heading} description={card.description} />
@@ -38,6 +39,7 @@ function Services() {
     )
 }
 
+// Styling Map Function
 function ServiceCard({ icon, heading, description }) {
     return (
         <Box boxShadow={'2xl'} h={'120%'} pt={6} _hover={{ cursor: 'pointer', bgColor: '#f7a010', rounded:'lg'}} data-aos="slide-up" data-aos-duration="6000" w={'100%'}>

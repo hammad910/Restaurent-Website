@@ -2,6 +2,7 @@ import { Container, Stack, Flex, Box, Heading, Text, Button, Image } from '@chak
 
 export default function CallToActionWithVideo() {
   return (
+    // Simple Image With Text
     <Container maxW={'100%'}>
       <Box w={'80%'} mx={'auto'}>
         <Flex justify={'center'} data-aos="slide-up" data-aos-duration="6000">
@@ -24,8 +25,8 @@ export default function CallToActionWithVideo() {
             </Button>
           </Stack>
           <Flex data-aos="slide-up" data-aos-duration="6000">
-            <Box height={{ base: '300px',md:'200px' ,lg: '250px', xl:'300px' }} rounded={'2xl'} overflow={'hidden'}>
-              <Image fit={'cover'} w={'100%'} h={'100%'} src={"https://cdn.wallpapersafari.com/42/55/MDzowJ.jpg"} />
+            <Box h={{ base: '300px',md:'200px' ,lg: '250px', xl:'400px' }} rounded={'2xl'} overflow={'hidden'}>
+              <Image fit={'cover'} w={'100%'} h={'100%'} src={"https://quickeat-react.vercel.app/assets/img/photo-9.jpg"} />
             </Box>
           </Flex>
         </Flex>

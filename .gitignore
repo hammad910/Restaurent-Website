@@ -22,3 +22,28 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# function CategoryCard({ icon, heading }) {
+#     return (
+#         <Flex align={'center'} gap={2} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }}>
+#             {icon}
+#             <Heading color={'#000'} fontFamily='Jost' >{heading}</Heading>
+#         </Flex>
+#     )
+# }
+
+#   {category.map((val, index) => (
+#                         <CategoryCard key={index} icon={val.icon} heading={val.heading} />
+#                     ))}
+
+#  const category = [
+#         {
+#             icon: <MdOutlineFreeBreakfast />, heading: 'Breakfast'
+#         },
+#         {
+#             icon: <MdLunchDining />, heading: 'Lunch'
+#         },
+#         {
+#             icon: <MdLunchDining />, heading: 'Dinner'
+#         },
+#     ]
