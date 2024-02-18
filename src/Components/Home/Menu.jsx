@@ -1,5 +1,6 @@
 
-import {React, useState} from 'react'
+import { React, useState } from 'react'
+import { FaClock } from "react-icons/fa6";
 import {
     Box, Stack, Text, Flex, VStack, Heading, SimpleGrid, useColorModeValue, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, useDisclosure, Button, Image,
     Link
@@ -69,55 +70,20 @@ function Menu() {
     const [overlay, setOverlay] = useState(<OverlayOne />)
 
     // Filter For Category Management
-    const [items, setItems] = useState(MenuCard)
-    const filtersItem = (category) => {
-        const updatedItem = MenuCard.filter((curElem) => {
-            return curElem.category === category
-        })
-        setItems(updatedItem)
-    }
-    const [isActive, setIsActive] = useState(false);
-    // const [ActiveCategory, setActiveCategory] = useState(null)
-    // setActiveCategory(filtersItem.category);
-// borderBottom={ActiveCategory === filtersItem.category ? '#000' : 'none '}
     return (
         // Menu in Home page
-        <Box w={'100%'} mt={28}>
+        <Box w={'100%'} mt={32}>
             <Flex justify={'center'} gap={8} data-aos="slide-up" data-aos-duration="6000">
-                <Heading color={'#000'} fontFamily='Lobster' fontSize={40} borderBottom={'2px solid #f7a010'}>Our Menu</Heading>
+                <Heading color={'#000'} fontFamily='Montserrat'  textAlign={'center'} fontSize={{ base: '33px', sm: '40px', md: '45', lg:'50px'}} borderBottom={'3px solid #f7a010'}>Our Menu</Heading>
             </Flex>
-            <Flex justify={'center'} data-aos="slide-up" data-aos-duration="6000" pt={10} fontWeight={'bold'} fontSize={{ base: 20, md: 30 }}>
-            {/* Using SimpleGrid For Responsiveness */}
-                <SimpleGrid columns={{ base: 2, sm: 4 }} gap={8} justifyContent={'space-evenly'}>
-                    {/* BreakFast */}
-                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => filtersItem('breakfast')}>
-                        <MdOutlineFreeBreakfast />
-                        <Heading  fontFamily='Jost' >Breakfast</Heading>
-                    </Flex>
-                    {/* Lunch */}
-                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => filtersItem('lunch')}>
-                        <MdLunchDining />
-                        <Heading color={'#000'} fontFamily='Jost' >Lunch</Heading>
-                    </Flex>
-                    {/* Dinner */}
-                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => filtersItem('dinner')}>
-                        <ImSpoonKnife />
-                        <Heading color={'#000'} fontFamily='Jost' >Dinner</Heading>
-                    </Flex>
-                    <Flex align={'center'} _hover={{ borderBottom: '4px solid #f7a010', cursor: 'pointer' }} onClick={() => setItems(MenuCard)}>
-                        <ImSpoonKnife />
-                        <Heading color={'#000'} fontFamily='Jost' >All</Heading>
-                    </Flex>
-                </SimpleGrid>
-            </Flex>
+            {/*  */}
             <Flex color={'black'} mt={12} justify={'center'} w={'80%'} mx={'auto'} direction={'column'}>
-            {/* Again Using SimpleGrid For Responsiveness */}
+                {/* Again Using SimpleGrid For Responsiveness */}
                 <SimpleGrid columns={{ base: 1, md: 2 }} gap={12} onClick={() => {
                     setOverlay(<OverlayOne />)
                     onOpen()
                 }}>
-                {/* MenuCard Map Function Its Name Is "items" Bcuz Of UseState */}
-                    {items.map((card, index) => (
+                    {MenuCard.map((card, index) => (
                         <MenuBox key={index} image={card.image} heading={card.heading} price={card.price} description={card.description} />
                     ))}
                 </SimpleGrid>
@@ -142,7 +108,7 @@ function Menu() {
                         <ModalCloseButton />
                         {/* Modal Body */}
                         <ModalBody>
-                        {/* SimpleGrid */}
+                            {/* SimpleGrid */}
                             <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 10 }} py={{ base: 18, md: 24 }} >
                                 <Flex justify={'center'} >
                                     <Image rounded={'md'} src='https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220' align={'center'} />
@@ -182,10 +148,10 @@ function Menu() {
 // Styling Map Function 
 function MenuBox({ image, heading, price, description }) {
     return (
-        <Box boxShadow={'2xl'} _hover={{ cursor: 'pointer', bgColor: '#f7a010' }} data-aos="slide-up" data-aos-duration="6000" >
+        <Box boxShadow={'2xl'} borderRadius={'xl'} _hover={{ cursor: 'pointer'}} data-aos="slide-up" data-aos-duration="6000" >
             <Flex w={'80%'} mx={'auto'} gap={8}  >
-                <Flex direction={'column'} mt={4}>
-                    <Image src={image} w={32} />
+                <Flex direction={'column'} my={4}>
+                    <Image src={image} w={'50'} borderRadius={'xl'} />
                 </Flex>
                 <Flex direction={'column'} pt={4}>
                     <Flex justify={'space-between'}>
@@ -193,7 +159,11 @@ function MenuBox({ image, heading, price, description }) {
                         <Text fontSize={20} fontWeight={'bold'}>{price}</Text>
                     </Flex>
                     <Flex mb={4}>
-                        <Text fontSize={"13px"}>{description}</Text>
+                        <Text fontSize={"13px"} borderBottom={'2px solid #75797e'} pb={8} pt={4}>{description}</Text>
+                    </Flex>
+                    <Flex mb={4} gap={2} color={'red'} align={'center'}> 
+                        <FaClock />
+                        <Text fontSize={"13px"} color={'#c0173f'} fontWeight={'bold'}>12:01 am - 11:59 pm</Text>
                     </Flex>
                 </Flex>
             </Flex>

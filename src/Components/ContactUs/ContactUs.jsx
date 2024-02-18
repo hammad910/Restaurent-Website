@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from '../Home/Contact';
+// import Contact from '../Home/Contact';
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdEmail } from 'react-icons/md';
 import { MdCall } from 'react-icons/md';
@@ -118,7 +118,7 @@ function ContactUs() {
                         </AspectRatio>
                     </Box>
                 </Flex>
-                <Contact />
+                {/* <Contact /> */}
             </Box>
         </Box>
     );
