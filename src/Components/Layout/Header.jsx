@@ -22,14 +22,14 @@ function Header() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/About' },
     { name: 'Service', path: '/Services' },
-    { name: 'Menu', path: '/Menu' },
+    { name: 'Menu' },
   ];
   // Header Links For Small Sizes
   const navMobLink = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/About' },
     { name: 'Service', path: '/Services' },
-    { name: 'Menu', path: '/Menu' },
+    { name: 'Menu' },
     { name: 'Contact', path: '/Contact' },
   ];
 

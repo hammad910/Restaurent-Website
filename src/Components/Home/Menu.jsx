@@ -20,42 +20,48 @@ function Menu() {
             heading: 'breakfast',
             price: '599Rs',
             description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
-            category: 'breakfast'
+            category: 'breakfast',
+            timing: ' 20 - 30 mints'
         },
         {
             image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
             heading: 'breakfast',
             price: '599Rs',
             description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
-            category: 'breakfast'
+            category: 'breakfast',
+            timing: ' 20 - 30 mints'
         },
         {
             image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
             heading: 'lunch',
             price: '599Rs',
             description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
-            category: 'lunch'
+            category: 'lunch',
+            timing: ' 20 - 30 mints'
         },
         {
             image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
             heading: 'lunch',
             price: '599Rs',
             description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
-            category: 'lunch'
+            category: 'lunch',
+            timing: ' 20 - 30 mints'
         },
         {
             image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
             heading: 'dinner',
             price: '599Rs',
             description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
-            category: 'dinner'
+            category: 'dinner',
+            timing: ' 20 - 40 mints'
         },
         {
             image: 'https://tse4.mm.bing.net/th?id=OIP.2mGppmx9cve8aBbt9TZzNwHaE8&pid=Api&P=0&h=220',
             heading: 'dinner',
             price: '599Rs',
             description: 'OUR GOAL IS TO  SPECIFIED REQUIREMENTS AND CUSTOMER EXPECTATIONS',
-            category: 'dinner'
+            category: 'dinner',
+            timing: ' 20 - 30 mints'
         },
     ]
 
@@ -70,13 +76,21 @@ function Menu() {
     const [overlay, setOverlay] = useState(<OverlayOne />)
 
     // Filter For Category Management
+    const [items, setItems] = useState(MenuCard)
+    const filtersItem = (category) => {
+        const updatedItem = MenuCard.filter((curElem) => {
+            return curElem.category === category
+        })
+        setItems(updatedItem)
+    }
     return (
         // Menu in Home page
         <Box w={'100%'} mt={32}>
             <Flex justify={'center'} gap={8} data-aos="slide-up" data-aos-duration="6000">
-                <Heading color={'#000'} fontFamily='Montserrat'  textAlign={'center'} fontSize={{ base: '33px', sm: '40px', md: '45', lg:'50px'}} borderBottom={'3px solid #f7a010'}>Our Menu</Heading>
+                <Heading color={'#000'} fontFamily='Montserrat' textAlign={'center'} fontSize={{ base: '33px', sm: '40px', md: '45', lg: '50px' }} borderBottom={'3px solid #f7a010'}>Our Menu</Heading>
             </Flex>
             {/*  */}
+            
             <Flex color={'black'} mt={12} justify={'center'} w={'80%'} mx={'auto'} direction={'column'}>
                 {/* Again Using SimpleGrid For Responsiveness */}
                 <SimpleGrid columns={{ base: 1, md: 2 }} gap={12} onClick={() => {
@@ -84,7 +98,7 @@ function Menu() {
                     onOpen()
                 }}>
                     {MenuCard.map((card, index) => (
-                        <MenuBox key={index} image={card.image} heading={card.heading} price={card.price} description={card.description} />
+                        <MenuBox key={index} image={card.image} heading={card.heading} price={card.price} description={card.description} timing={card.timing} />
                     ))}
                 </SimpleGrid>
                 <Flex justify={'center'} >
@@ -146,10 +160,10 @@ function Menu() {
 }
 
 // Styling Map Function 
-function MenuBox({ image, heading, price, description }) {
+function MenuBox({ image, heading, price, description, timing }) {
     return (
-        <Box boxShadow={'2xl'} borderRadius={'xl'} _hover={{ cursor: 'pointer'}} data-aos="slide-up" data-aos-duration="6000" >
-            <Flex w={'80%'} mx={'auto'} gap={8}  >
+        <Box boxShadow={'2xl'} borderRadius={'xl'} _hover={{ cursor: 'pointer' }} data-aos="slide-up" data-aos-duration="6000" >
+            <Flex w={'80%'} mx={'auto'} gap={8} direction={{ base: 'column', lg: 'row' }} >
                 <Flex direction={'column'} my={4}>
                     <Image src={image} w={'50'} borderRadius={'xl'} />
                 </Flex>
@@ -161,9 +175,9 @@ function MenuBox({ image, heading, price, description }) {
                     <Flex mb={4}>
                         <Text fontSize={"13px"} borderBottom={'2px solid #75797e'} pb={8} pt={4}>{description}</Text>
                     </Flex>
-                    <Flex mb={4} gap={2} color={'red'} align={'center'}> 
+                    <Flex mb={4} gap={2} color={'red'} align={'center'}>
                         <FaClock />
-                        <Text fontSize={"13px"} color={'#c0173f'} fontWeight={'bold'}>12:01 am - 11:59 pm</Text>
+                        <Text fontSize={"13px"} color={'#c0173f'} fontWeight={'bold'}>{timing}</Text>
                     </Flex>
                 </Flex>
             </Flex>

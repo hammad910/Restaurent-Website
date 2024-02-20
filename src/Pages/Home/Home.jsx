@@ -6,6 +6,7 @@ import Category from '../../Components/Home/Category'
 import Menu from '../../Components/Home/Menu'
 import OurDeal from '../../Components/Home/OurDeal'
 import HowItWorks from '../../Components/Home/HowItWorks'
+import OurTeam from '../../Components/Home/OurTeam'
 // import Testimonials from '../../Components/Home/Testimonials'
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
         <Menu/>
         <OurDeal/>
         <HowItWorks/>
+        <OurTeam/>
         {/* <Testimonials/> */}
     </Layout>
   )
